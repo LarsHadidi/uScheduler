@@ -1,0 +1,5 @@
+Apache license
+MIT license
+BSD license
+WTFPL license
+(LGPL license)

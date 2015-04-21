@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/white.css" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu" />
+		<title>Man online - zimpl (1)</title>
+		<meta name="description" content="Zuse Institute Mathematical Programming Language" />
+	</head>
+	<body>
+		
+		<div id="topbar">
+			<form action="/">
+				<input type="text" name="q" autocomplete="off" /><input type="submit" class="s" value="Search" />
+			</form>
+			<h1><a href="/">man online</a> &gt; <a href="../">man1</a> &gt; <a href="" class="c">zimpl</a></h1>
+		</div>
+		
+		<div id="content">
+						<div class="r">
+				
+<h2>Index</h2>
+<dl>
+<dt><a href="#lbAB">NAME</a></dt>
+<dt><a href="#lbAC">SYNOPSIS</a></dt>
+<dt><a href="#lbAD">DESCRIPTION</a></dt>
+<dt><a href="#lbAE">OPTIONS</a></dt>
+<dt><a href="#lbAF">DIAGNOSTICS</a></dt>
+<dt><a href="#lbAG">BUGS</a></dt>
+<dt><a href="#lbAH">AUTHOR</a></dt>
+<dt><a href="#lbAI">WEBSITE</a></dt>
+<dt><a href="#lbAJ">SEE ALSO</a></dt>
+</dl>
+				<h2>Package</h2>
+				<ul><a href="/package/main/zimpl/">zimpl</a><br/></ul>
+				<h2>In this package&hellip;</h2>				
+				<ul><a href="/man1/zimpl/">zimpl</a> (1)<br/></ul>
+			</div>
+			<div class="l">
+				
+<a name="lbAB" id="lbAB"></a>
+<h2>NAME</h2>
+<strong>zimpl</strong> - Zuse Institute Mathematical Programming Language <a name=
+"lbAC" id="lbAC">&nbsp;</a>
+<h2>SYNOPSIS</h2>
+<b>zimpl [ -b ] [ -D</b> <i>name=value</i> <b>] [ -f ] [ -F</b>
+<i>filter</i> <b>] [ -h ] [ -m ] [ -l</b> <i>length</i> <b>[ -n</b>
+<i>cm|cn|cf</i> <b>] [ -o</b> <i>outfile</i> <b>] [ -O ] [ -P</b>
+<i>filter</i> <b>[ -r ] [ -t</b> <i>lp|mps|hum|rlp|pip</i> <b>] [
+-s</b> <i>seed</i> <b>] [ -v</b> <i>0-5</i> <b>] [ -V ]</b>
+<i>file</i> <b>...</b> <a name="lbAD" id="lbAD"></a>
+<h2>DESCRIPTION</h2>
+<b>Zimpl</b> is a little language to translate the mathematical
+model of a problem into a linear or (mixed-)integer mathematical
+program expressed in LPF or MPS file format which can be read by a
+LP or MIP solver.
+<p>None of the options is necessary. All input files in <b>zpl</b>
+format that are given are concatenated and processed as if they are
+one big file. This makes is possible to combine different parts of
+a model on the command line. In this case the first filename given
+will be used as basename for the output files in absence of an
+<b>-o</b> option.</p>
+<p>The <b>-t</b> option is to select the output format. <b>mps</b>
+can be read by every solver. <b>lpf</b> is an CPLEX format, but can
+also read by several solvers. BE aware that for example Range-rows
+can not be expressed in <b>lpf .</b> If you want to inspected the
+output yourself, <b>hum</b> format is a variant of <b>lpf</b> with
+no name mangeling whatever, but unfortunately this violates several
+format restrictions, so no solver will read this in. If <b>rlp</b>
+is specified the output is in <b>lpf</b> format, but rows and
+columns are randomly permuted.<br />
+&nbsp; <a name="lbAE" id="lbAE"></a></p>
+<h2>OPTIONS</h2>
+<dl compact="compact">
+<dt>-b</dt>
+<dd>Enable <b><a href="/man1/bison/">bison</a></b>(1)
+debugging output.</dd>
+<dt>-D name=value</dt>
+<dd>Sets the parameter <i>name</i> to the specified value. This is
+equivalent with having this line in the Zimpl program: param
+name:=val .</dd>
+<dt>-f</dt>
+<dd>Enable <b><a href="/man1/flex/">flex</a></b>(1)
+debugging output.</dd>
+<dt>-F filter</dt>
+<dd>The output is piped through a filter. A %s in the string is
+replaced by the output filename. For example: -F "gzip -c
+&gt;%s.gz" would compress all the output files.</dd>
+<dt>-h</dt>
+<dd>Show program help.</dd>
+<dt>-l length</dt>
+<dd>Sets the maximum length for variable names in LPF output
+files.</dd>
+<dt>-m</dt>
+<dd>Write a CPLEX .mst Mip STart file.</dd>
+<dt>-n cm|cn|cf</dt>
+<dd>Select the format for the generation of constraint names. Can
+be either <i>cm</i> which will number them 1 ... n with a `c' in
+front. <i>cn</i> will use the name supplied in the subto statement
+and number them 1 ... n within the statement. <i>cf</i> will use
+the name given with the subto, then a 1 .. n number like in
+<i>cm</i> and then append all the local variables from the forall
+statements.</dd>
+<dt>-o outfile</dt>
+<dd>Sets the base-name for the output files. Default is the name of
+the input file without extension.</dd>
+<dt>-O</dt>
+<dd>Optimize the generated LP by doing some presolve analysis
+(experimental).</dd>
+<dt>-P filter</dt>
+<dd>The input is piped through a filter. A %s in the string is
+replaced by the input filename. For example: -F "cpp -DWITH_C1 %s"
+would pass the input file through the C-preprocessor.</dd>
+<dt>-r</dt>
+<dd>Write a CPLEX .ord branching order file.</dd>
+<dt>-s seed</dt>
+<dd>Set the random number generator seed.</dd>
+<dt>-t lp|mps|hum|rlp|pip</dt>
+<dd>Selects the output format. Can be either <i>lp</i> which is
+default, or <i>mps</i> , or <i>hum</i> , which is (only) human
+readable, or <i>rlp</i> , which is randomly permuted, or <i>pip</i>
+, which means polynimial IP.</dd>
+<dt>-v 0-5</dt>
+<dd>Set the verbosity level. 0 is quiet, 1 is default, 2 is
+verbose, 3 is chatter, and 5 is debug.</dd>
+<dt>-V</dt>
+<dd>Prints the version number.</dd>
+</dl>
+<a name="lbAF" id="lbAF"></a>
+<h2>DIAGNOSTICS</h2>
+The following diagnostics may be issued on stderr:
+<p>101 Bad filename</p>
+<dl compact="compact">
+<dd>The name given with the <b>-o option</b> is either missing, a
+directory name, or starts with a dot.</dd>
+</dl>
+175 Illegal syntax for command line define -- ignored
+<dl compact="compact">
+<dd>The parameter of a <b>-D</b> option was either not of the form
+<i>name=value</i> or the name was not a legal identifier.</dd>
+</dl>
+There are about a hundred other possible error messages, but these
+are either about the contend of the input file, or system messages.
+<a name="lbAG" id="lbAG"></a>
+<h2>BUGS</h2>
+Please report any bug to the author. <a name="lbAH" id=
+"lbAH">&nbsp;</a>
+<h2>AUTHOR</h2>
+Thorsten Koch &lt;<a href="mailto:koch@zib.de">koch@zib.de</a>&gt;
+<a name="lbAI" id="lbAI"></a>
+<h2>WEBSITE</h2>
+The lastest version of Zimpl is always available at &lt;<a href=
+"http://zimpl.zib.de">http://zimpl.zib.de</a>&gt;. <a name="lbAJ"
+id="lbAJ">&nbsp;</a>
+<h2>SEE ALSO</h2>
+The Zimpl User Guide at &lt;<a href=
+"http://zimpl.zib.de/download/zimpl.pdf">http://zimpl.zib.de/download/zimpl.pdf</a>&gt;.
+
+			</div>
+						<div id="me">
+				<a href="http://mathieu-rodic.com/web-development" target="_blank">Web development</a>
+				by Mathieu Rodic, last updated on August 2011
+				&nbsp;-&nbsp;
+				Source : Debian Archive
+			</div>
+		</div>		
+		<button id="color"></button>		
+	</body>
+</html>

@@ -1,0 +1,22 @@
+!!!
+html
+	head
+		meta(charset="utf-8")
+		title uScheduler 3
+		link(rel='stylesheet' href='/css/bootstrap.css')
+		link(rel='stylesheet' href='/css/dashboard.css')
+		script(src="/js/lib/jquery-1.11.0.js")		
+		script(src="/js/lib/knockout-3.1.0.js")
+		script(src="/js/lib/papaparse.js")
+		script(src="/js/lib/bootstrap.js")
+			//- Consider a CDN for production use. Anyway, don't forget to use minimized libs
+			//- http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js
+			//- http://code.jquery.com/jquery-latest.min.js
+		
+	body
+		-include("headbar.jade")
+		.container-fluid
+			.row
+				-include("sidebar.jade")
+				.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+					-include("dummy.jade")

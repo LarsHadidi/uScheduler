@@ -1,0 +1,74 @@
+# Java specific
+*.class
+
+# sbt specific
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Eclipse specific
+*.classpath
+*.project
+*.pydevproject
+.metadata
+.gradle
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin 
+.target
+
+# TeXlipse plugin
+.texlipse
+
+# entpackte TestDaten
+testdata/Anmeldungen_2013_03_05_PROD_ANON.csv
+testdata/Termine_2013_03_05_PROD.csv
+
+# Zimpl specific
+*.mps
+*.lp
+*.tbl
+
+# generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# rails specific
+*.sqlite3
+config/database.yml
+
+# Ensime specific
+*.ensime
+.ensime_lucene

@@ -1,0 +1,4 @@
+Project stopped.
+
+Front-End needs to be finished.
+We were researching for a way to extract data from an arbitrary tabular format.

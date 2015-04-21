@@ -1,0 +1,9 @@
+SuperCSV: Apache License, Version 2.0
+Log4J: The Apache Software License, Version 2.0
+XMLRPC: The Apache Software License, Version 2.0
+Socko: Apache 2 license
+
+ChartJS: MIT license
+JQuery:  MIT license
+NoUiSlider: WTFPL license
+AppJS: MIT license

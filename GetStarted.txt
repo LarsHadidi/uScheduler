@@ -1,0 +1,10 @@
+sbt in uScheduler-folder
+sbt> compile
+sbt> container:start
+
+In a Browser: localhost:8080
+(eventually reload)
+Login: UN=admin, PW=admin
+
+sbt> container:stop
+
