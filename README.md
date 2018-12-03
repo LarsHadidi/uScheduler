@@ -8,7 +8,7 @@ The system is designed to work on any tabular input. The semantics of that will 
 
 The following linear program models the problem:
 
-<img src="https://cdn.rawgit.com/LarsHadidi/uScheduler/master/res/LP_Input.svg" width="600" alt="LP Input"/>
+<img src="https://raw.githubusercontent.com/LarsHadidi/ResourcesRepository/master/LP_Input.svg" width="600" alt="LP Input"/>
 <img src="https://cdn.rawgit.com/LarsHadidi/uScheduler/master/res/LP_Output.svg" width="600" alt="LP Output"/>
 <img src="https://cdn.rawgit.com/LarsHadidi/uScheduler/master/res/LP_ContrAndObj.svg" width="600" alt="LP Contraints and objective"/>
 
